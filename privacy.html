@@ -3,234 +3,200 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy – IT Gateway</title>
+  <title>Privacy Policy — IT Gateway</title>
+  <meta name="description" content="Privacy Policy for IT Gateway, covering TikTok Login Kit and Content Posting API data usage.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #F7EAD9;
-      --card: #FFFCFA;
-      --text: #1C1C1C;
-      --muted: #5C5348;
-      --accent: #1C1C1C;
-      --border: #E8D9C4;
-      --soft: #F0E4D4;
+    :root{
+      --bg:#F6ECDD; --card:#FFFFFF; --ink:#17140F; --muted:#6B6256;
+      --accent:#F0631E; --accent-soft:#FDE7D6; --border:#EADBC7; --soft:#F5ECDF;
+      --ring:0 1px 2px rgba(23,20,15,.04),0 12px 40px rgba(23,20,15,.07);
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      padding: 48px 20px 64px;
-      min-height: 100vh;
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:radial-gradient(1200px 500px at 50% -10%, #FBF3E7 0%, var(--bg) 60%);
+      color:var(--ink); line-height:1.72; -webkit-font-smoothing:antialiased; padding-bottom:64px;
     }
-    .container {
-      max-width: 760px;
-      margin: 0 auto;
-      background: var(--card);
-      padding: 52px 48px;
-      border-radius: 16px;
-      box-shadow: 0 8px 32px rgba(28, 28, 28, 0.06);
-      border: 1px solid var(--border);
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 36px;
-      padding-bottom: 28px;
-      border-bottom: 1px solid var(--border);
-    }
-    .brand-mark {
-      width: 52px;
-      height: 52px;
-      background: var(--accent);
-      color: var(--bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 1.15rem;
-      letter-spacing: -1px;
-      border-radius: 10px;
-    }
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-    }
-    .brand-name {
-      font-size: 1.35rem;
-      font-weight: 700;
-      letter-spacing: -0.4px;
-      line-height: 1.2;
-    }
-    .brand-tagline {
-      font-size: 0.8rem;
-      color: var(--muted);
-      letter-spacing: 0.3px;
-      margin-top: 2px;
-    }
-    h1 {
-      font-size: 1.9rem;
-      font-weight: 700;
-      margin-bottom: 6px;
-      letter-spacing: -0.6px;
-      color: var(--text);
-    }
-    .updated {
-      color: var(--muted);
-      font-size: 0.92rem;
-      margin-bottom: 32px;
-    }
-    h2 {
-      font-size: 1.15rem;
-      margin-top: 36px;
-      margin-bottom: 10px;
-      font-weight: 650;
-      color: var(--text);
-      letter-spacing: -0.2px;
-    }
-    p, li {
-      margin-bottom: 11px;
-      color: #2E2A25;
-      font-size: 0.98rem;
-    }
-    ul {
-      padding-left: 22px;
-      margin-bottom: 14px;
-    }
-    li {
-      margin-bottom: 6px;
-    }
-    a {
-      color: var(--accent);
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-    a:hover {
-      opacity: 0.75;
-    }
-    strong {
-      font-weight: 600;
-      color: var(--text);
-    }
-    code {
-      background: var(--soft);
-      padding: 2px 7px;
-      border-radius: 5px;
-      font-size: 0.88em;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      color: var(--text);
-    }
-    .footer {
-      margin-top: 48px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-      font-size: 0.88rem;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .footer a {
-      color: var(--muted);
-      text-decoration: none;
-    }
-    .footer a:hover {
-      color: var(--text);
-      text-decoration: underline;
-    }
-    @media (max-width: 600px) {
-      body { padding: 24px 14px 40px; }
-      .container { padding: 36px 24px; border-radius: 12px; }
-      h1 { font-size: 1.55rem; }
-      .brand { margin-bottom: 28px; padding-bottom: 22px; }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline; text-underline-offset:3px}
+    /* top bar */
+    .topbar{position:sticky; top:0; z-index:30; backdrop-filter:saturate(1.2) blur(8px);
+      background:rgba(246,236,221,.82); border-bottom:1px solid var(--border);}
+    .topbar-in{max-width:820px; margin:0 auto; padding:12px 22px; display:flex; align-items:center; gap:12px}
+    .logo{display:flex; align-items:center; gap:11px}
+    .logo .mark{width:38px;height:38px;display:block}
+    .logo .name{font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:1.05rem; letter-spacing:-.4px}
+    .logo .name span{color:var(--accent)}
+    .nav{margin-left:auto; display:flex; gap:6px}
+    .nav a{font-size:.86rem; font-weight:600; color:var(--muted); padding:7px 13px; border-radius:9px}
+    .nav a:hover{background:var(--soft); color:var(--ink); text-decoration:none}
+    .nav a.active{background:var(--ink); color:#fff}
+    /* card */
+    .wrap{max-width:820px; margin:30px auto 0; padding:0 22px}
+    .card{background:var(--card); border:1px solid var(--border); border-radius:20px; box-shadow:var(--ring); overflow:hidden}
+    .head{padding:40px 44px 30px; border-bottom:1px solid var(--border);
+      background:linear-gradient(180deg,#fff 0%, #FFFBF6 100%)}
+    .hero-logo{display:block;height:110px;width:auto;margin:2px 0 22px}
+    .kicker{display:inline-flex; align-items:center; gap:7px; font-size:.74rem; font-weight:700; letter-spacing:.10em; text-transform:uppercase;
+      color:var(--accent); background:var(--accent-soft); padding:6px 11px; border-radius:999px; margin-bottom:16px}
+    h1{font-family:"Space Grotesk",sans-serif; font-size:2.3rem; font-weight:700; letter-spacing:-1px; line-height:1.1}
+    .updated{color:var(--muted); font-size:.92rem; margin-top:10px}
+    .badges{display:flex; flex-wrap:wrap; gap:8px; margin-top:20px}
+    .badge{font-size:.78rem; font-weight:600; color:var(--ink); background:var(--soft); border:1px solid var(--border);
+      padding:6px 12px; border-radius:999px}
+    .badge code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.82em; color:var(--accent)}
+    .body{padding:14px 44px 40px}
+    .lead{font-size:1.03rem; color:#312B22; margin:22px 0 6px}
+    h2{font-family:"Space Grotesk",sans-serif; font-size:1.2rem; font-weight:600; letter-spacing:-.3px;
+      margin:34px 0 10px; padding-top:6px; display:flex; align-items:center; gap:10px}
+    h2 .n{flex:none; width:26px;height:26px; border-radius:8px; background:var(--ink); color:#fff;
+      font-size:.8rem; font-weight:700; display:flex; align-items:center; justify-content:center; font-family:"Inter"}
+    p,li{color:#312B22; font-size:.985rem; margin-bottom:11px}
+    ul{padding-left:20px; margin-bottom:14px}
+    li{margin-bottom:7px}
+    strong{font-weight:600; color:var(--ink)}
+    code{background:var(--soft); border:1px solid var(--border); padding:2px 7px; border-radius:6px; font-size:.86em;
+      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace; color:var(--ink)}
+    /* table */
+    .tbl{width:100%; border-collapse:collapse; margin:8px 0 16px; font-size:.92rem; border:1px solid var(--border); border-radius:12px; overflow:hidden}
+    .tbl th{ text-align:left; background:var(--soft); font-weight:600; color:var(--ink); padding:11px 14px; font-size:.82rem; letter-spacing:.02em}
+    .tbl td{padding:11px 14px; border-top:1px solid var(--border); vertical-align:top; color:#312B22}
+    .tbl tr td:first-child{white-space:nowrap; font-weight:600}
+    /* callout */
+    .callout{border:1px solid var(--border); border-left:4px solid var(--accent); background:#FFF9F4;
+      border-radius:12px; padding:16px 18px; margin:18px 0}
+    .callout h3{font-family:"Space Grotesk",sans-serif; font-size:1rem; margin-bottom:6px}
+    /* contact */
+    .contact{display:flex; align-items:center; gap:16px; background:var(--ink); color:#fff; border-radius:14px; padding:20px 22px; margin-top:22px; flex-wrap:wrap}
+    .contact .ico{width:42px;height:42px; border-radius:11px; background:var(--accent); display:flex; align-items:center; justify-content:center; flex:none}
+    .contact .t{font-size:.82rem; color:#C9C2B6; letter-spacing:.04em; text-transform:uppercase; font-weight:600}
+    .contact a{color:#fff; font-weight:600; font-size:1.05rem}
+    .footer{max-width:820px; margin:24px auto 0; padding:0 30px; display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+      color:var(--muted); font-size:.86rem}
+    .footer a{color:var(--muted); font-weight:600}
+    @media(max-width:620px){
+      .head{padding:30px 22px 24px} .body{padding:10px 22px 30px} h1{font-size:1.75rem}
+      .topbar-in{padding:10px 16px} .wrap{padding:0 14px} .nav a{padding:6px 10px}
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="brand">
-      <div class="brand-mark">IT</div>
-      <div class="brand-text">
-        <div class="brand-name">IT Gateway</div>
-        <div class="brand-tagline">Where careers in tech begin</div>
+  <header class="topbar">
+    <div class="topbar-in">
+      <div class="logo">
+        <span class="name">IT&nbsp;<span>Gateway</span></span>
+      </div>
+      <nav class="nav">
+        <a href="/terms">Terms</a>
+        <a href="/privacy" class="active">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="card">
+      <div class="head">
+        <img class="hero-logo" alt="IT Gateway — Where careers in tech begin" src="data:image/png;base64,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">
+        <span class="kicker">● Privacy Policy</span>
+        <h1>Privacy Policy</h1>
+        <p class="updated">Last updated: 13 September 2026 · Effective: 13 September 2026</p>
+        <div class="badges">
+          <span class="badge">TikTok Login Kit</span>
+          <span class="badge">Content Posting API</span>
+          <span class="badge"><code>user.info.basic</code></span>
+          <span class="badge"><code>video.publish</code></span>
+          <span class="badge"><code>video.upload</code></span>
+        </div>
+      </div>
+
+      <div class="body">
+        <p class="lead">This Privacy Policy explains how <strong>IT Gateway</strong> (“we”, “us”, or “our”) — the service operated on the domain <strong>bistab.com.np</strong> — collects, uses, stores, and protects your information when you use our application and its TikTok features (the “Service”).</p>
+        <p>We are committed to protecting your privacy and to handling your data transparently and lawfully. By using the Service, you agree to the practices described in this policy. We only access TikTok data that you explicitly authorize, and only to provide features you actively use.</p>
+
+        <h2><span class="n">1</span>Information We Collect</h2>
+        <p>We collect only what is necessary to operate the Service:</p>
+        <table class="tbl">
+          <thead><tr><th>Data</th><th>Source</th><th>Why we collect it</th></tr></thead>
+          <tbody>
+            <tr><td>Basic TikTok profile</td><td>TikTok Login Kit — <code>user.info.basic</code></td><td>To identify your account and show your display name, avatar, and user ID inside the Service.</td></tr>
+            <tr><td>Videos you choose to send</td><td>You, via the Service — <code>video.publish</code> / <code>video.upload</code></td><td>To upload the video you select to your own TikTok account or draft inbox.</td></tr>
+            <tr><td>Access &amp; refresh tokens</td><td>TikTok OAuth</td><td>To keep you connected and perform the actions you request without asking you to log in every time.</td></tr>
+            <tr><td>Basic usage &amp; technical data</td><td>Automatically</td><td>To operate, secure, and troubleshoot the Service (e.g. timestamps, error logs).</td></tr>
+          </tbody>
+        </table>
+        <p>We do <strong>not</strong> collect your TikTok password, your private messages, your contacts, or any TikTok data beyond the scopes listed above.</p>
+
+        <h2><span class="n">2</span>How We Use Your Information</h2>
+        <ul>
+          <li>To authenticate you through TikTok and display your basic profile.</li>
+          <li>To upload or publish a video to your TikTok account <strong>only when you explicitly trigger that action</strong>.</li>
+          <li>To operate, maintain, secure, and improve the Service.</li>
+          <li>To respond to your support requests and comply with legal obligations.</li>
+        </ul>
+
+        <h2><span class="n">3</span>What We Never Do</h2>
+        <ul>
+          <li>We never <strong>sell, rent, or trade</strong> your personal or TikTok data.</li>
+          <li>We never use your TikTok data for <strong>advertising, profiling, or to train machine-learning/AI models</strong>.</li>
+          <li>We never post, edit, or delete content on your TikTok account <strong>without your explicit action and consent</strong>.</li>
+          <li>We never share your data with third parties except as strictly required to run the Service or comply with the law.</li>
+        </ul>
+
+        <h2><span class="n">4</span>TikTok Data &amp; Third Parties</h2>
+        <p>Our TikTok features are provided through TikTok’s Login Kit and Content Posting API. Your use of these features is also governed by <a href="https://www.tiktok.com/legal/privacy-policy" target="_blank" rel="noopener">TikTok’s Privacy Policy</a> and <a href="https://www.tiktok.com/community-guidelines" target="_blank" rel="noopener">Community Guidelines</a>. We request the minimum scopes required:</p>
+        <ul>
+          <li><code>user.info.basic</code> — to display your name and profile picture.</li>
+          <li><code>video.publish</code> / <code>video.upload</code> — to share the videos you choose to your own TikTok account.</li>
+        </ul>
+        <p>We may rely on trusted infrastructure providers (for hosting and secure processing) who act only on our instructions and are bound to protect your data.</p>
+
+        <h2><span class="n">5</span>Data Storage, Security &amp; Retention</h2>
+        <p>Access and refresh tokens are stored securely and used only to perform the actions you request. We apply reasonable technical and organizational safeguards to protect your information, though no method of transmission or storage is completely secure.</p>
+        <p>We retain your data only as long as needed to provide the Service. If you disconnect your TikTok account or request deletion, we remove your stored profile data and revoke/delete stored tokens within <strong>30 days</strong>, except where retention is required by law.</p>
+
+        <h2><span class="n">6</span>Your Rights &amp; Choices</h2>
+        <ul>
+          <li>Access, correct, or delete the personal data we hold about you.</li>
+          <li>Withdraw consent or object to certain processing.</li>
+          <li><strong>Revoke our access at any time</strong> from TikTok: <em>Settings and privacy → Security &amp; permissions → Manage app permissions</em>.</li>
+        </ul>
+
+        <div class="callout">
+          <h3>🗑️ How to delete your data</h3>
+          <p style="margin-bottom:0">Email <strong>todaynepal5@gmail.com</strong> with the subject “Delete my data”. We will delete your stored profile information and tokens within 30 days and confirm once complete. You can also immediately cut off access by revoking the app in your TikTok app settings (see above).</p>
+        </div>
+
+        <h2><span class="n">7</span>Children’s Privacy</h2>
+        <p>The Service is not directed to children under 13 (or the minimum age required in your country). We do not knowingly collect data from children. If we learn we have, we will delete it promptly.</p>
+
+        <h2><span class="n">8</span>International Transfers</h2>
+        <p>Your information may be processed in countries other than your own. Where this happens, we take steps to ensure appropriate safeguards are in place.</p>
+
+        <h2><span class="n">9</span>Changes to This Policy</h2>
+        <p>We may update this policy from time to time. The “Last updated” date above reflects the latest version. Material changes will be made clear on this page.</p>
+
+        <h2><span class="n">10</span>Contact Us</h2>
+        <p>Questions about this policy or your data? Reach out any time:</p>
+        <div class="contact">
+          <span class="ico">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/></svg>
+          </span>
+          <div>
+            <div class="t">Contact</div>
+            <a href="mailto:todaynepal5@gmail.com">todaynepal5@gmail.com</a>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
 
-    <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: September 13, 2026</p>
-
-    <p>This Privacy Policy describes how <strong>IT Gateway</strong> (“we”, “us”, or “our”), operated under the domain <strong>bistab.com.np</strong>, collects, uses, and shares information when you use our website and services (the “Service”).</p>
-
-    <p>We are committed to protecting your privacy. By using IT Gateway, you agree to the collection and use of information in accordance with this policy.</p>
-
-    <h2>1. Information We Collect</h2>
-    <p>We may collect the following types of information:</p>
-    <ul>
-      <li><strong>Account Information:</strong> When you sign in with TikTok Login Kit, we receive basic profile information such as your TikTok display name, profile picture, and unique user ID (scope: <code>user.info.basic</code>).</li>
-      <li><strong>Usage Data:</strong> Information about how you interact with the Service (pages visited, features used, timestamps).</li>
-      <li><strong>Device & Technical Data:</strong> IP address, browser type, device type, and operating system.</li>
-      <li><strong>Content You Share:</strong> Any videos or content you choose to publish to TikTok through our platform (scopes: <code>video.publish</code> and <code>video.upload</code>).</li>
-    </ul>
-
-    <h2>2. How We Use Your Information</h2>
-    <p>We use the information we collect to:</p>
-    <ul>
-      <li>Provide, operate, and improve the Service</li>
-      <li>Personalize your experience (e.g., showing your name and profile picture)</li>
-      <li>Enable TikTok login and content posting features</li>
-      <li>Communicate with you about updates or support</li>
-      <li>Analyze usage to improve our platform</li>
-      <li>Comply with legal obligations</li>
-    </ul>
-
-    <h2>3. TikTok Integration & Third Parties</h2>
-    <p>When you use TikTok Login or Content Posting features, your data is also subject to TikTok’s Privacy Policy. We only request the minimum scopes necessary:</p>
-    <ul>
-      <li><code>user.info.basic</code> – to display your name and profile picture</li>
-      <li><code>video.publish</code> and <code>video.upload</code> – to allow you to share videos to your own TikTok account</li>
-    </ul>
-    <p>We never post content without your explicit permission. We do not sell your personal data to third parties.</p>
-
-    <h2>4. Cookies and Tracking</h2>
-    <p>We may use cookies and similar technologies to remember your preferences and understand how the Service is used. You can control cookies through your browser settings.</p>
-
-    <h2>5. Data Retention</h2>
-    <p>We retain your information only for as long as necessary to provide the Service and fulfill the purposes described in this policy, or as required by law.</p>
-
-    <h2>6. Data Security</h2>
-    <p>We implement reasonable technical and organizational measures to protect your personal information. However, no method of transmission over the internet is 100% secure.</p>
-
-    <h2>7. Your Rights</h2>
-    <p>Depending on your location, you may have the right to:</p>
-    <ul>
-      <li>Access the personal data we hold about you</li>
-      <li>Request correction or deletion of your data</li>
-      <li>Object to or restrict certain processing</li>
-      <li>Withdraw consent (where applicable)</li>
-    </ul>
-    <p>To exercise these rights, please contact us using the details below.</p>
-
-    <h2>8. Children’s Privacy</h2>
-    <p>Our Service is not directed to children under 13. We do not knowingly collect personal information from children under 13. If we learn that we have collected such information, we will delete it promptly.</p>
-
-    <h2>9. International Data Transfers</h2>
-    <p>Your information may be processed in countries other than your own. We take steps to ensure appropriate safeguards are in place.</p>
-
-    <h2>10. Changes to This Privacy Policy</h2>
-    <p>We may update this Privacy Policy from time to time. The “Last updated” date at the top will indicate the most recent version. We encourage you to review this page periodically.</p>
-
-    <h2>11. Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy or our data practices, please contact us at:</p>
-    <p><strong>Email:</strong> support@bistab.com.np<br>
-    <strong>Website:</strong> <a href="https://bistab.com.np">https://bistab.com.np</a></p>
-
-    <div class="footer">
-      <span>© 2026 IT Gateway · bistab.com.np</span>
-      <span><a href="/terms">Terms of Service</a></span>
-    </div>
+  <div class="footer">
+    <span>© 2026 IT Gateway — Where careers in tech begin.</span>
+    <span><a href="/terms">Terms of Service ↗</a></span>
   </div>
 </body>
 </html>
